@@ -7,7 +7,73 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="clock" id="clock"></div>
+    <!-- Div para mostrar o relógio -->
+    <div id="clock"></div>
+
+    <!-- Campo para definir o horário do alarme -->
+    <div>
+        <label for="alarmTime">Defina o horário do alarme:</label>
+        <input type="time" id="alarmTime">
+    </div>
+
+    <!-- Botões para Ativar e Parar o Alarme -->
+    <div class="container-botoes">
+        <button onclick="setAlarm()">Ativar Alarme</button>
+        <button onclick="stopAlarm()">Parar Alarme</button>
+    </div>
+
+    <!-- Incluindo o JavaScript -->
     <script src="script.js"></script>
+    
+    <!-- Código adicional para o alarme sonoro -->
+    <script>
+        let audio = new Audio('Shinunoga.mp3'); // Caminho do arquivo de áudio
+        let alarmeAtivo = false;
+        let alarmeHora = null;
+
+        // Função para atualizar o relógio
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+            
+            // Verifica se o alarme deve tocar
+            if (alarmeAtivo) {
+                const horaAlarme = alarmeHora.split(':');
+                if (horaAlarme[0] == hours && horaAlarme[1] == minutes && seconds == "00") {
+                    playAlarm(); // Toca o alarme quando for o horário
+                }
+            }
+        }
+
+        // Função para definir o horário do alarme
+        function setAlarm() {
+            const alarmTime = document.getElementById('alarmTime').value;
+            if (alarmTime) {
+                alarmeHora = alarmTime; // Salva o horário do alarme
+                alarmeAtivo = true; // Ativa o alarme
+                alert(`Alarme definido para as ${alarmTime}`);
+            }
+        }
+
+        // Função para tocar o alarme
+        function playAlarm() {
+            audio.play(); // Toca o áudio do alarme
+            audio.loop = true; // Repete a música enquanto não parar
+            
+        }
+
+        // Função para parar o alarme
+        function stopAlarm() {
+            audio.pause(); // Pausa o áudio
+            audio.currentTime = 0; // Reseta o áudio ao começo
+            alarmeAtivo = false; // Desativa o alarme
+        }
+
+        // Atualiza o relógio a cada segundo
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>

@@ -1,14 +1,56 @@
+/* Estilo de fundo para a página */
 body {
+    background-color: #706b6b; /* Cor de fundo clara */
+    font-family: Arial, sans-serif; /* Fontes mais limpas */
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: rgb(245, 12, 12);
-    color: white;
-    font-family: Arial, sans-serif;
+    flex-direction: column;
+    align-items: center;  /* Alinha tudo no centro da tela */
+    justify-content: center;  /* Garante que tudo ficará centralizado */
+    height: 100vh;  /* Ocupa toda a altura da tela */
 }
 
-.clock {
-    font-size: 60px;
-    font-weight: bold;
+/* Estilo para o relógio */
+#clock {
+    font-size: 85px; /* Tamanho da fonte do relógio */
+    font-weight: bold; /* Deixa o texto em negrito */
+    color: #333; /* Cor do texto do relógio */
+    margin-bottom: 30px; /* Espaço abaixo do relógio */
+}
+
+/* Container de botões */
+.container-botoes {
+    display: flex;
+    flex-direction: row; /* Alterado para linha (side by side) */
+    gap: 15px; /* Espaço entre os botões */
+    margin-top: 20px; /* Espaço no topo */
+    justify-content: center; /* Centraliza os botões na tela */
+}
+
+/* Estilo para os botões */
+button {
+    font-size: 18px;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none; /* Remove a borda padrão */
+    background-color: #c2d4c2; /* Cor verde clara do botão */
+    color: rgb(7, 7, 7); /* Cor do texto do botão */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Alteração no fundo e texto ao passar o mouse */
+button:hover {
+    background-color: #610808; /* Cor do botão ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo para o campo de tempo do alarme */
+input[type="time"] {
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px; /* Espaço abaixo do campo */
 }
