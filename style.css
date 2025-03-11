@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: black;
+    background-color: rgb(245, 12, 12);
     color: white;
     font-family: Arial, sans-serif;
 }
