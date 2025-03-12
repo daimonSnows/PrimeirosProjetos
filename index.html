@@ -9,6 +9,7 @@
 <body>
     <!-- Div para mostrar o relógio -->
     <div id="clock"></div>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Campo para definir o horário do alarme -->
     <div>
@@ -75,5 +76,53 @@
         // Atualiza o relógio a cada segundo
         setInterval(updateClock, 1000);
     </script>
+<video id="background-video" autoplay loop muted>
+    <source id="video-source" src="fundos/manha 1.mp4" type="video/mp4">
+    Seu navegador não suporta vídeos em HTML5.
+</video>
+<p id="date"></p>
+
+
+</body>
+</html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+</head>
+<body>
+    <h1>Previsão do Tempo</h1>
+    
+    <p id="temperatura"></p>
+    <p id="condicao"></p>
+    <img id="icone-clima" alt="Ícone do clima" />
+    
+    <script src="seu-codigo.js"></script>  <!-- O caminho do seu arquivo JS -->
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+    <link rel="stylesheet" href="style.css">  <!-- Seu arquivo CSS -->
+</head>
+<body>
+    <h1>Previsão do Tempo</h1>
+
+    <div id="data">
+        <p id="data-atual"></p>
+        <p id="temperatura"></p>
+        <p id="condicao"></p>
+        <img id="icone-clima" alt="Ícone do clima" />
+    </div>
+
+    <script src="seu-codigo.js"></script>  <!-- O caminho do seu arquivo JS -->
 </body>
 </html>
