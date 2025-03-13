@@ -1,7 +1,7 @@
 /* Estilo de fundo para a página */
 body {
     background-color: #706b6b; /* Cor de fundo clara */
-    font-family: Arial, sans-serif; /* Fontes mais limpas */
+    font-family: 'Poppins', sans-serif; /* Fontes mais limpas */
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,6 +9,19 @@ body {
     align-items: center;  /* Alinha tudo no centro da tela */
     justify-content: center;  /* Garante que tudo ficará centralizado */
     height: 100vh;  /* Ocupa toda a altura da tela */
+}
+
+/* Configuração do vídeo como fundo */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que o vídeo cubra toda a tela sem distorcer */
+    z-index: -1; /* Mantém o vídeo atrás de todo o conteúdo */
+    background: rgb(26, 25, 25); /* Caso o vídeo demore a carregar, evita uma tela branca */
+    filter: brightness(50%);
 }
 
 /* Estilo para o relógio */
@@ -34,17 +47,9 @@ button {
     padding: 12px 25px;
     border-radius: 8px;
     border: none; /* Remove a borda padrão */
-    background-color: #c2d4c2; /* Cor verde clara do botão */
-    color: rgb(7, 7, 7); /* Cor do texto do botão */
-    cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Alteração no fundo e texto ao passar o mouse */
-button:hover {
-    background-color: #610808; /* Cor do botão ao passar o mouse */
-    color: white; /* Cor do texto ao passar o mouse */
-}
 
 /* Estilo para o campo de tempo do alarme */
 input[type="time"] {
@@ -54,30 +59,6 @@ input[type="time"] {
     border: 1px solid #ccc;
     margin-bottom: 20px; /* Espaço abaixo do campo */
 }
-
-/* Remove margens e garante que o fundo cubra toda a tela */
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-}
-
-/* Configuração do vídeo como fundo */
-#background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que o vídeo cubra toda a tela sem distorcer */
-    z-index: -1; /* Mantém o vídeo atrás de todo o conteúdo */
-    background: rgb(189, 14, 14); /* Caso o vídeo demore a carregar, evita uma tela branca */
-}
-
-
-
-
 
 /* Tema Claro */
 .tema-claro {
@@ -99,36 +80,25 @@ body, html {
     color: #ffffff !important;
 }
 
-/* Botões e inputs */
+/* Botões e inputs no tema escuro */
 .tema-escuro input,
 .tema-escuro button {
-    background-color: #cfcbcb;
-    color: #ffffff !important;
-    border: 1px solid #ffffff;
+    background-color: #d6cece;
+    color: #111111 !important;
+    border: 1px solid #0a0a0a;
 }
 
+/* Botões e inputs no tema claro */
 .tema-claro input,
 .tema-claro button {
-    background-color: #ddd;
-    color: #000000 !important;
-    border: 1px solid #000000;
+    background-color: #ccc3c3;
+    color: #080808 !important;
+    border: 1px solid #0c0b0b;
 }
-
-/* Configuração do vídeo de fundo */
-#background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
 
 /* Alteração no fundo e texto ao passar o mouse */
 .tema-claro button:hover {
-    background-color: #610808; /* Vermelho escuro */
+    background-color: #037425; 
     color: rgb(15, 15, 15) !important;
 }
 
@@ -137,14 +107,7 @@ body, html {
     color: #131212 !important;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
- }
- /* Fonte para a página */
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
+/* Responsividade */
 @media (max-width: 768px) {
     #clock {
         font-size: 3rem;
@@ -158,44 +121,5 @@ body {
         width: 100%;
         margin-bottom: 10px;
     }
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-
-#clock {
-    font-size: 5rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 30px;
-}
-
-#background-video {
-    filter: brightness(50%);
-}
-
-/* Estilo para os botões */
-button {
-    font-size: 16px; /* Diminui o tamanho da fonte */
-    padding: 8px 16px; /* Menos espaço interno */
-    border-radius: 6px; /* Arredondamento mais sutil */
-    border: none;
-    background-color: #c2d4c2;
-    color: rgb(7, 7, 7);
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Alteração ao passar o mouse */
-button:hover {
-    background-color: #610808;
-    color: white;
 }
 
